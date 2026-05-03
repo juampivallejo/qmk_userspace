@@ -29,23 +29,34 @@ enum layers {
 #define FN_MAC MO(MAC_FN)
 #define FN_WIN MO(WIN_FN)
 
-// juampivallejo custom
+// Left Hand
+#define BRM_Z  MT(MOD_LSFT, KC_Z)
+#define BRM_X  MT(MOD_LCTL, KC_X)
+#define BRM_C  MT(MOD_LGUI, KC_C)
+#define BRM_V  MT(MOD_LALT, KC_V)
+
+// Right Hand
+#define BRM_SL MT(MOD_RSFT, KC_SLSH)
+#define BRM_DT MT(MOD_RCTL, KC_DOT)
+#define BRM_CM MT(MOD_RGUI, KC_COMM)
+#define BRM_M  MT(MOD_RALT, KC_M)
+
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MAC_BASE] = LAYOUT_tkl_ansi(
-        KC_ESC,                   KC_BRID,               KC_BRIU,               KC_MCTRL,              KC_LNPAD,              UG_VALD,  UG_VALU,  KC_MPRV,               KC_MPLY,               KC_MNXT,               KC_MUTE,                KC_VOLD,       KC_VOLU,  KC_SNAP,  KC_SIRI,  UG_NEXT,
-        KC_GRV,         KC_1,     KC_2,                  KC_3,                  KC_4,                  KC_5,                  KC_6,     KC_7,     KC_8,                  KC_9,                  KC_0,                  KC_MINS,                KC_EQL,        KC_BSPC,  KC_INS,   KC_HOME,  KC_PGUP,
-        KC_TAB,         KC_Q,     KC_W,                  KC_E,                  KC_R,                  KC_T,                  KC_Y,     KC_U,     KC_I,                  KC_O,                  KC_P,                  KC_LBRC,                KC_RBRC,       KC_BSLS,  KC_DEL,   KC_END,   KC_PGDN,
-        LT(1,KC_ESC),   KC_A,     KC_S,                  KC_D,                  KC_F,                  KC_G,                  KC_H,     KC_J,     KC_K,                  KC_L,                  KC_SCLN,               KC_QUOT,                               KC_ENT,
-        KC_LSFT,                  MT(MOD_LALT,KC_Z),     MT(MOD_LCTL,KC_X),     MT(MOD_LGUI,KC_C),     MT(MOD_LSFT,KC_C),     KC_B,     KC_N,     MT(MOD_RSFT,KC_M),     MT(MOD_RGUI,KC_COMM),  MT(MOD_RCTL,KC_DOT),   MT(MOD_RALT,KC_SLSH),                  KC_RSFT,            KC_UP,
-        KC_LCTL,        KC_LOPTN, KC_LCMMD,                                                                                       KC_SPC,                                                       KC_RCMMD,              KC_LOPTN,               FN_MAC,        KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT ),
+        KC_ESC,                   KC_BRID,   KC_BRIU,   KC_MCTRL,  KC_LNPAD,  UG_VALD,  UG_VALU,  KC_MPRV,               KC_MPLY,   KC_MNXT,    KC_MUTE,     KC_VOLD,    KC_VOLU,  KC_SNAP,  KC_SIRI,  UG_NEXT,
+        KC_GRV,         KC_1,     KC_2,      KC_3,      KC_4,      KC_5,      KC_6,     KC_7,     KC_8,                  KC_9,      KC_0,       KC_MINS,     KC_EQL,     KC_BSPC,  KC_INS,   KC_HOME,  KC_PGUP,
+        KC_TAB,         KC_Q,     KC_W,      KC_E,      KC_R,      KC_T,      KC_Y,     KC_U,     KC_I,                  KC_O,      KC_P,       KC_LBRC,     KC_RBRC,    KC_BSLS,  KC_DEL,   KC_END,   KC_PGDN,
+        LT(1,KC_ESC),   KC_A,     KC_S,      KC_D,      KC_F,      KC_G,      KC_H,     KC_J,     KC_K,                  KC_L,      KC_SCLN,    KC_QUOT,     KC_ENT,
+        KC_LSFT,                  BRM_Z,     BRM_X,     BRM_C,     BRM_V,     KC_B,     KC_N,     BRM_M,     BRM_CM,     BRM_DT,    BRM_SL,     KC_RSFT,                           KC_UP,
+        KC_LCTL,        KC_LOPTN, KC_LCMMD,                                       KC_SPC,                                KC_RCMMD,  KC_LOPTN,   FN_MAC,      KC_RCTL,    KC_LEFT,  KC_DOWN,  KC_RGHT ),
 
 
     [MAC_FN] = LAYOUT_tkl_ansi(
         _______,            KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   _______,  _______,  UG_TOGG,
         _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
-        UG_TOGG,  UG_NEXT,  UG_VALU,  UG_HUEU,  UG_SATU,  UG_SPDU,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+        UG_TOGG,  UG_NEXT,  UG_VALU,  UG_HUEU,  UG_SATU,  UG_SPDU,  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
         OS_TOGGL, UG_PREV,  UG_VALD,  UG_HUED,  UG_SATD,  UG_SPDD,  _______,  _______,  _______,  _______,  _______,  _______,            _______,
         _______,            _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,            _______,            _______,
         _______,  _______,  _______,                                _______,                                _______,  _______,  _______,  _______,  _______,  _______,  _______),
@@ -73,4 +84,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         OS_TOGGL, UG_PREV,  UG_VALD,  UG_HUED,  UG_SATD,  UG_SPDD,  _______,  _______,  _______,  _______,  _______,  _______,            _______,
         _______,            _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,            _______,            _______,
         _______,  _______,  _______,                                _______,                                _______,  _______,  _______,  _______,  _______,  _______,  _______),
+};
+
+// juampivallejo custom
+// 1. Name your combos
+enum combos {
+  WE_WS1,
+  SD_WS2,
+  DF_ENT,
+  JK_ESC,
+  BN_CAPS,
+  COMBO_LENGTH // This must be last
+};
+
+// 2. Define the trigger keys (ends with COMBO_END)
+const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM sd_combo[] = {KC_S, KC_D, COMBO_END};
+const uint16_t PROGMEM df_combo[] = {KC_D, KC_F, COMBO_END};
+const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM bn_combo[] = {KC_B, KC_N, COMBO_END};
+
+// 3. Map the trigger keys to the action
+combo_t key_combos[] = {
+  [WE_WS1] = COMBO(we_combo, A(KC_1)), // Alt + 1 for Aerospace
+  [SD_WS2] = COMBO(sd_combo, A(KC_2)), // Alt + 2 for Aerospace
+  [DF_ENT] = COMBO(df_combo, KC_ENT),  // Home row Enter
+  [JK_ESC] = COMBO(jk_combo, KC_ESC),  // Home row Escape
+  [BN_CAPS] = COMBO(bn_combo, CW_PAUSE) // Caps Word
 };
