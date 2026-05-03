@@ -1,0 +1,5 @@
+
+// Juampivallejo custom
+#define DYNAMIC_KEYMAP_LAYER_COUNT 8
+
+#define TAPPING_TERM 250

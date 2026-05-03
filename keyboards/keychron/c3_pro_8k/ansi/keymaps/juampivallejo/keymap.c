@@ -29,6 +29,8 @@ enum layers {
 #define FN_MAC MO(MAC_FN)
 #define FN_WIN MO(WIN_FN)
 
+// juampivallejo custom
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MAC_BASE] = LAYOUT_tkl_ansi(
